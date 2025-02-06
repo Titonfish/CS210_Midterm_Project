@@ -1,1 +1,3 @@
-# CS210_Midterm_Project
+# CS 210 Midterm Project
+## Charlie
+## Polonus
