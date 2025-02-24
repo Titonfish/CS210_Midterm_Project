@@ -1,0 +1,3 @@
+C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/ReadCSV/cmake-build-debug/CMakeFiles/ReadCSV.dir
+C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/ReadCSV/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/ReadCSV/cmake-build-debug/CMakeFiles/rebuild_cache.dir
