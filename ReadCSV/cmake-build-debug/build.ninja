@@ -61,12 +61,6 @@ build CMakeFiles/ReadCSV.dir/CSVReader.cpp.obj: CXX_COMPILER__ReadCSV_unscanned_
   OBJECT_DIR = CMakeFiles\ReadCSV.dir
   OBJECT_FILE_DIR = CMakeFiles\ReadCSV.dir
 
-build CMakeFiles/ReadCSV.dir/SinglyLinkedList.cpp.obj: CXX_COMPILER__ReadCSV_unscanned_Debug C$:/Users/Charlie$ P/Documents/#$ Senior$ Files/Advanced$ Data$ Structures$ and$ Algorithms/MidtermRepo/CS210_Midterm_Project/ReadCSV/SinglyLinkedList.cpp || cmake_object_order_depends_target_ReadCSV
-  DEP_FILE = CMakeFiles\ReadCSV.dir\SinglyLinkedList.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\ReadCSV.dir
-  OBJECT_FILE_DIR = CMakeFiles\ReadCSV.dir
-
 build CMakeFiles/ReadCSV.dir/SchoolList.cpp.obj: CXX_COMPILER__ReadCSV_unscanned_Debug C$:/Users/Charlie$ P/Documents/#$ Senior$ Files/Advanced$ Data$ Structures$ and$ Algorithms/MidtermRepo/CS210_Midterm_Project/ReadCSV/SchoolList.cpp || cmake_object_order_depends_target_ReadCSV
   DEP_FILE = CMakeFiles\ReadCSV.dir\SchoolList.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
@@ -81,7 +75,7 @@ build CMakeFiles/ReadCSV.dir/SchoolList.cpp.obj: CXX_COMPILER__ReadCSV_unscanned
 #############################################
 # Link the executable ReadCSV.exe
 
-build ReadCSV.exe: CXX_EXECUTABLE_LINKER__ReadCSV_Debug CMakeFiles/ReadCSV.dir/main.cpp.obj CMakeFiles/ReadCSV.dir/CSVReader.cpp.obj CMakeFiles/ReadCSV.dir/SinglyLinkedList.cpp.obj CMakeFiles/ReadCSV.dir/SchoolList.cpp.obj
+build ReadCSV.exe: CXX_EXECUTABLE_LINKER__ReadCSV_Debug CMakeFiles/ReadCSV.dir/main.cpp.obj CMakeFiles/ReadCSV.dir/CSVReader.cpp.obj CMakeFiles/ReadCSV.dir/SchoolList.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ReadCSV.dir
