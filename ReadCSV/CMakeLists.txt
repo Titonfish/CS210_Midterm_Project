@@ -3,4 +3,6 @@ project(ReadCSV)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(ReadCSV main.cpp)
+add_executable(ReadCSV main.cpp
+        CSVReader.cpp
+        SchoolList.cpp)
