@@ -18,13 +18,13 @@ int main()
 {
     SchoolList schools;
 
-    vector<vector<string>> data = CSVReader::readCSV("C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/ReadCSV/schools.csv");
+    const vector<vector<string>> data = CSVReader::readCSV("INPUT FILEPATH HERE/ReadCSV/schools.csv");
 
     for (int i = 1; i < data.size(); i++)
     {
-        vector<string> schoolData = data[i];
+        const vector<string>& schoolData = data[i];
 
-        schools.insertFirst(new School(schoolData[0], schoolData[1], schoolData[2], schoolData[3], schoolData[4]));
+        schools.insertLast(new School(schoolData[0], schoolData[1], schoolData[2], schoolData[3], schoolData[4]));
     }
 
     schools.display();
@@ -39,7 +39,7 @@ int main()
     cout << "Deleting an existing school: " << schools.deleteByName("Magnolia Elementary") << endl;
     cout << "Deleting a non-existent school: " << schools.deleteByName("Serendipity Middle School") << endl;
 
-    cout << "Searching for the deleted school:";
+    cout << "Searching for the deleted school: ";
     findAndDisplay(schools, "Magnolia Elementary");
 
     return 0;
