@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct School
@@ -76,7 +77,7 @@ private:
         {
             return;
         }
-        std::cout << node->name << " ";
+        std::cout << node->name[0] << node->name[1] << " ";
         preOrderTraversalHelper(node->left);
         preOrderTraversalHelper(node->right);
     }
@@ -88,7 +89,7 @@ private:
         }
         postOrderTraversalHelper(node->left);
         postOrderTraversalHelper(node->right);
-        std::cout << node->name << " ";
+        std::cout << node->name[0] << node->name[1] << " ";
     }
 public:
     SchoolBST() : root(nullptr) {}
@@ -112,10 +113,9 @@ public:
     {
         if (root == nullptr)
         {
-            std::cout << "PreOrderTraversal: Empty Tree" << std::endl;
+            std::cout << "Empty Tree" << std::endl;
             return;
         }
-        std::cout << "PreOrder Traversal: ";
         preOrderTraversalHelper(root);
         std::cout << std::endl;
     }
@@ -123,10 +123,9 @@ public:
     {
         if (root == nullptr)
         {
-            std::cout << "PostOrder Traversal: Empty Tree" << std::endl;
+            std::cout << "Empty Tree" << std::endl;
             return;
         }
-        std::cout << "PostOrder Traversal: ";
         postOrderTraversalHelper(root);
         std::cout << std::endl;
     }
