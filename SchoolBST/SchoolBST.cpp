@@ -1,6 +1,4 @@
 #include <iostream>
-#include <queue>
-using namespace std;
 
 struct School
 {
@@ -46,7 +44,7 @@ private:
         {
             return node;
         }
-        return (name < node->name) ? findNode(node->left, name) : findNode(node->right, name);
+        return findNode((name < node->name) ? node->left : node->right, name);
     }
     void deleteTree(School* node)
     {
@@ -64,12 +62,20 @@ private:
         {
             return;
         }
-        if (node->name == name)
+        if (node->left != nullptr && node->left->name == name)
         {
-            delete(node);
+            delete node->left;
+            node->left = nullptr;
             return;
         }
-        (name < node->name) ? deleteNode(node->left, name) : deleteNode(node->right, name);
+        if (node->right != nullptr && node->right->name == name)
+        {
+            delete node->right;
+            node->right = nullptr;
+            return;
+        }
+
+        deleteNode((name < node->name) ? node->left : node->right, name);
     }
     void preOrderTraversalHelper(School* node)
     {
@@ -77,7 +83,7 @@ private:
         {
             return;
         }
-        std::cout << node->name[0] << node->name[1] << " ";
+        std::cout << node->name << " ";
         preOrderTraversalHelper(node->left);
         preOrderTraversalHelper(node->right);
     }
@@ -89,7 +95,17 @@ private:
         }
         postOrderTraversalHelper(node->left);
         postOrderTraversalHelper(node->right);
-        std::cout << node->name[0] << node->name[1] << " ";
+        std::cout << node->name << " ";
+    }
+    void inOrderTraversalHelper(School* node)
+    {
+        if (node == nullptr)
+        {
+            return;
+        }
+        inOrderTraversalHelper(node->left);
+        std::cout << node->name << " ";
+        inOrderTraversalHelper(node->right);
     }
 public:
     SchoolBST() : root(nullptr) {}
@@ -109,7 +125,7 @@ public:
     {
         deleteNode(root, name);
     }
-    void preOrderTraversal()
+    void displayPreOrder()
     {
         if (root == nullptr)
         {
@@ -119,7 +135,7 @@ public:
         preOrderTraversalHelper(root);
         std::cout << std::endl;
     }
-    void postOrderTraversal()
+    void displayPostOrder()
     {
         if (root == nullptr)
         {
@@ -127,6 +143,17 @@ public:
             return;
         }
         postOrderTraversalHelper(root);
+        std::cout << std::endl;
+    }
+    void displayInOrder()
+    {
+        if (root == nullptr)
+        {
+            std::cout << "Empty Tree" << std::endl;
+            return;
+        }
+
+        inOrderTraversalHelper(root);
         std::cout << std::endl;
     }
 };
