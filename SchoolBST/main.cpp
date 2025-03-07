@@ -19,7 +19,7 @@ int main()
     cout << endl;
     */
 
-    const vector<vector<string>> data = CSVReader::readCSV("C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/ReadCSV/schools.csv");
+    const vector<vector<string>> data = CSVReader::readCSV("INPUT FILEPATH HERE/ReadCSV/schools.csv");
 
     for (int i = 1; i < data.size(); i++)
     {
