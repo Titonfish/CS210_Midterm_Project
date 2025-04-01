@@ -45,7 +45,7 @@ public:
         int hashValue = hashFunction(school->name, schools.size());
         schools[hashValue].push_back(school);
     }
-    void deleteByName(const string& name)
+    bool deleteByName(const string& name)
     {
         int hashValue = hashFunction(name, schools.size());
         for (int i=0; i<schools[hashValue].size(); i++)
@@ -53,8 +53,11 @@ public:
             if (schools[hashValue][i]->name == name)
             {
                 schools[hashValue].erase(schools[hashValue].begin() + i);
+                return true;
             }
         }
+
+        return false;
     }
     School* findByName(const string& name)
     {
