@@ -1,7 +1,19 @@
 #include <iostream>
+#include <vector>
+#include "CSVReader.cpp"
+#include "SchoolHashTable.cpp"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    SchoolHashTable schoolTable;
+
+    const vector<vector<string>> data = CSVReader::readCSV("C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/HashTables/schools.csv");
+
+    for (int i = 1; i < data.size(); i++)
+    {
+        const vector<string>& schoolData = data[i];
+
+        schoolTable.insert(new School(schoolData[0], schoolData[1], schoolData[2], schoolData[3], schoolData[4]));
+    }
 }

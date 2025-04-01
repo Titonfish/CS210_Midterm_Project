@@ -3,4 +3,5 @@ project(HashTables)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(HashTables main.cpp)
+add_executable(HashTables main.cpp
+        SchoolHashTable.cpp)
