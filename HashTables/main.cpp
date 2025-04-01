@@ -14,6 +14,10 @@ int main()
     {
         const vector<string>& schoolData = data[i];
 
-        schoolTable.insert(new School(schoolData[0], schoolData[1], schoolData[2], schoolData[3], schoolData[4]));
+        School* newSchool = new School(schoolData[0], schoolData[1], schoolData[2], schoolData[3], schoolData[4]);
+
+        schoolTable.insert(newSchool);
     }
+
+    schoolTable.display();
 }
