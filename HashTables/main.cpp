@@ -12,7 +12,7 @@ int main()
     School* schoolSearch = schoolTable.findByName("Evergreen Montessori");
     cout << "- " << (schoolSearch == nullptr ? "nullptr" : schoolSearch->display()) << endl;
 
-    const vector<vector<string>> data = CSVReader::readCSV("C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/HashTables/schools.csv");
+    const vector<vector<string>> data = CSVReader::readCSV("INSERT_FILEPATH_HERE/HashTables/schools.csv");
 
     for (int i = 1; i < data.size(); i++)
     {
