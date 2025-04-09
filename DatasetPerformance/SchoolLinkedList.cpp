@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-#include "School.cpp"
 
 struct SchoolListNode
 {
@@ -56,30 +55,30 @@ public:
             return false;
         }
 
-        if (head->next->school->name == name)
+        SchoolListNode* temp = head;
+
+        if (head->school->name == name)
         {
-            SchoolListNode* temp = head;
             head = head->next;
             delete temp;
             return true;
         }
 
-        SchoolListNode* temp = head;
-        while (temp->next->school->name != name)
+        while (temp->next != nullptr)
         {
-            if (temp->next->next == nullptr)
+            if (temp->next->school->name == name)
             {
-                return false;
+                SchoolListNode* temp2 = temp->next;
+                temp->next = temp2->next;
+                delete temp2;
+                return true;
             }
             temp = temp->next;
         }
-        temp->next = temp->next->next;
-        delete temp;
-
-        return true;
+        return false;
     }
 
-    SchoolListNode* findByName(const string& name)
+    School* findByName(const string& name)
     {
         if (head == nullptr)
         {
@@ -95,7 +94,7 @@ public:
             }
             temp = temp->next;
         }
-        return temp;
+        return temp->school;
     }
 
     void display()

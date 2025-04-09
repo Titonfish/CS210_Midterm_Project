@@ -5,10 +5,7 @@
 class Timer final
 {
 public:
-    Timer()
-            : _start(std::chrono::high_resolution_clock::now())
-    {
-    }
+    Timer() : _start(std::chrono::high_resolution_clock::now()) {}
 
     ~Timer() = default;
 
@@ -30,6 +27,11 @@ public:
         std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
         auto end = std::chrono::high_resolution_clock::now();
         return std::chrono::duration<double, std::micro>(end - start).count();
+    }
+
+    void restart()
+    {
+      _start = std::chrono::high_resolution_clock::now();
     }
 
 private:

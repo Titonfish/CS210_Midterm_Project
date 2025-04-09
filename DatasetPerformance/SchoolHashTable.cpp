@@ -5,7 +5,6 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#include "School.cpp"
 
 class SchoolHashTable
 {
