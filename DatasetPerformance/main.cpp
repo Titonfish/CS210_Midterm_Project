@@ -8,23 +8,28 @@
 #include "SchoolHashTable.cpp"
 using namespace std;
 
-void testLinkedList(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData);
-void testBST(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData);
-void testHashTable(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData);
+void testLinkedList(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData, const double percentage);
+void testBST(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData, const double percentage);
+void testHashTable(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData, const double percentage);
 
 int main()
 {
     const vector<vector<string>> illinoisSchoolData = CSVReader::readCSV("C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/DatasetPerformance/Illinois_Schools.csv");
     const vector<vector<string>> usaSchoolData = CSVReader::readCSV("C:/Users/Charlie P/Documents/# Senior Files/Advanced Data Structures and Algorithms/MidtermRepo/CS210_Midterm_Project/DatasetPerformance/USA_Schools.csv");
 
-    testLinkedList(illinoisSchoolData, usaSchoolData);
-    cout << endl << endl;
-    testBST(illinoisSchoolData, usaSchoolData);
-    cout << endl << endl;
-    testHashTable(illinoisSchoolData, usaSchoolData);
+    for (double i=0.1; i<=1;i+=0.1)
+    {
+        cout << (i * 100) << "% of USA School List:\n-----------------------------------" << endl;
+        testLinkedList(illinoisSchoolData, usaSchoolData, i);
+        cout << endl << endl;
+        testBST(illinoisSchoolData, usaSchoolData, i);
+        cout << endl << endl;
+        testHashTable(illinoisSchoolData, usaSchoolData, i);
+        cout << endl << endl;
+    }
 }
 
-void testLinkedList(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData)
+void testLinkedList(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData, const double percentage)
 {
     Timer timer;
 
@@ -32,7 +37,7 @@ void testLinkedList(const vector<vector<string>>& illinoisSchoolData, const vect
     SchoolLinkedList schoolLinkedList;
 
     timer.restart();
-    for (int i = 1; i < usaSchoolData.size(); i++)
+    for (int i = 1; i < usaSchoolData.size()* percentage; i++)
     {
         const vector<string>& schoolData = usaSchoolData[i];
 
@@ -60,7 +65,7 @@ void testLinkedList(const vector<vector<string>>& illinoisSchoolData, const vect
     }
     cout << "- Time to delete all Illinois schools: " << timer.get_time() << " microseconds" << endl;
 }
-void testBST(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData)
+void testBST(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData, const double percentage)
 {
     Timer timer;
 
@@ -68,7 +73,7 @@ void testBST(const vector<vector<string>>& illinoisSchoolData, const vector<vect
     SchoolBST schoolBST;
 
     timer.restart();
-    for (int i = 1; i < usaSchoolData.size(); i++)
+    for (int i = 1; i < usaSchoolData.size() * percentage; i++)
     {
         const vector<string>& schoolData = usaSchoolData[i];
 
@@ -96,7 +101,7 @@ void testBST(const vector<vector<string>>& illinoisSchoolData, const vector<vect
     }
     cout << "- Time to delete all Illinois schools: " << timer.get_time() << " microseconds" << endl;
 }
-void testHashTable(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData)
+void testHashTable(const vector<vector<string>>& illinoisSchoolData, const vector<vector<string>>& usaSchoolData, const double percentage)
 {
     Timer timer;
 
@@ -104,7 +109,7 @@ void testHashTable(const vector<vector<string>>& illinoisSchoolData, const vecto
     SchoolHashTable schoolHashTable;
 
     timer.restart();
-    for (int i = 1; i < usaSchoolData.size(); i++)
+    for (int i = 1; i < usaSchoolData.size()* percentage; i++)
     {
         const vector<string>& schoolData = usaSchoolData[i];
 

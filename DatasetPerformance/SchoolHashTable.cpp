@@ -22,7 +22,7 @@ public:
     SchoolHashTable()
     {
         schools = vector<vector<School*>>();
-        schools.resize(23);
+        schools.resize(54799);
     }
     void insert(School* school)
     {
